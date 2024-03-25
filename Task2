@@ -1,0 +1,14 @@
+programming_codes = [14, 15, 16, 17, 18, 19, 20]
+
+print("Programming codes for realted books: ")
+print(programming_codes)
+
+total_codes = sum(programming_codes)
+
+odd_codes = [code for code in programming_codes if code % 2 != 0]
+print("Codes tracked by odd numbers: ")
+print(odd_codes)
+
+unique_set_codes = set(programming_codes)
+print("List of codes: ")
+print(unique_set_codes)

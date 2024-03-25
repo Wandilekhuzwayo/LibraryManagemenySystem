@@ -1,0 +1,26 @@
+books = []
+members = []
+
+book_id = input("Enter Book Id: ")
+title = input("Enter book title: ")
+author = input("Enter book author: ")
+status = input("Enter book status(Default is ('Available'): ") or "Available"
+books.append({
+    "book_id" : book_id,
+    "title" : title,
+    "author" : author,
+    "status" : status
+})
+
+member_id = input("Enter Member ID: ")
+name = input("Enter meber name: ")
+members.append({
+    "member_id" : member_id,
+    "name" : name,
+    "borrowed_books" : []
+})
+
+print("Books List: ")
+print(books)
+print("Members List: ")
+print(members)

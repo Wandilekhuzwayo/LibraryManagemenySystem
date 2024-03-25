@@ -1,0 +1,21 @@
+import pandas as pd
+
+books_df = pd.DataFrame(columns=["book_id", "title", "author", "status"])
+members_df = pd.DataFrame(columns=["members_id", "name","borrowed_books"])
+
+book_id = input("Enter book ID: ")
+title = input("Enter title: ")
+author = input("Enter author: ")
+status = input("Enter status (default is 'Available'): ") or "Available"
+new_book = pd.DataFrame([[book_id, title, author, status]], columns=["book_id", "title", "author", "status"])
+books_df = pd.concat([books_df,new_book], ignore_index=True)
+
+member_id = input("Enter member ID: ")
+name = input("Enter name: ")
+new_member = pd.DataFrame([[member_id, name,[]]], columns=["members_id", "name", "borrowed_books"])
+members_df = pd.concat([members_df,new_member], ignore_index=True)
+
+print("Books data frame:")
+print(books_df)
+print("Members data frame:")
+print(members_df)

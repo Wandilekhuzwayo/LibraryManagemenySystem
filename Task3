@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+insurance_data = pd.read_csv("C:/Users/wkhuz/OneDrive/Desktop/2024 TP2 Work/motor_insure.csv")
+print("First 10 records: ")
+print(insurance_data.head(10))
+
+fitered_data = insurance_data[(insurance_data['SEATS_NUM'] > 40) & (insurance_data['USAGE'] == 'business')]
+print("Records for make and usage for seats_num that are more than 40: ")
+print(fitered_data[['MAKE', 'USAGE', 'SEATS_NUM']])
+
+insurance_data['EFFECTIVE_YR'] = pd.to_numeric(insurance_data['EFFECTIVE_YR'], errors= 'coerce')
+
+plt.scatter(insurance_data['CARRYING_CAPACITY'], insurance_data['EFFECTIVE_YR'])
+plt.xlabel('CARRYING_CAPACITY')
+plt.ylabel('EFFECTIVE_YR')
+plt.title('Carrying Capacity vs. Effective Year')
+plt.show()
